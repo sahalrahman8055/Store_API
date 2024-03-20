@@ -23,9 +23,9 @@ class StoreProvider extends ChangeNotifier {
       _error = '';
       notifyListeners();
 
-      final List<StoreModel> storeData = await _service.getStore();
+       _storeList = await _service.getStore();
       // print(storeData);
-      _storeList = storeData;
+      // _storeList = storeData;
     } catch (e) {
       _error = "Failed to Load Data $e";
     } finally {

@@ -1,10 +1,11 @@
+import 'package:cloths_list/views/card_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cloths_list/controllers/Store_controller.dart';
 import 'package:cloths_list/models/store_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key});
+  const HomeScreen({super.key});
 
   // @override
   @override
@@ -19,7 +20,9 @@ class HomeScreen extends StatelessWidget {
           builder: (context, provider, _) {
             if (provider.isloading) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  backgroundColor: Colors.pink,
+                ),
               );
             } else if (provider.error.isNotEmpty) {
               return Center(
@@ -34,10 +37,22 @@ class HomeScreen extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 20),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CardScreen(
+                                image: store.image,
+                                title: store.title,
+                                price: store.price.toString(),
+                                rate: store.rating.rate.toString(),
+                                description: store.description,
+                              ),
+                            ));
+                      },
                       title: Text(
-                        store.title,
                         style: TextStyle(color: Colors.grey.shade600),
+                        store.title,
                       ),
                       subtitle: Padding(
                         padding: const EdgeInsets.only(
