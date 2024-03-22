@@ -23,7 +23,7 @@ class StoreProvider extends ChangeNotifier {
       _error = '';
       notifyListeners();
 
-       _storeList = await _service.getStore();
+      _storeList = await _service.getStore();
       // print(storeData);
       // _storeList = storeData;
     } catch (e) {

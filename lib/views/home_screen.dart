@@ -7,6 +7,8 @@ import 'package:cloths_list/models/store_model.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  @override
+
   // @override
   @override
   Widget build(BuildContext context) {

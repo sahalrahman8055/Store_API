@@ -2,11 +2,11 @@
 //
 //     final storeModel = storeModelFromJson(jsonString);
 
-import 'dart:convert';
+// import 'dart:convert';
 
-List<StoreModel> storeModelFromJson(String str) => List<StoreModel>.from(json.decode(str).map((x) => StoreModel.fromJson(x)));
+// List<StoreModel> storeModelFromJson(String str) => List<StoreModel>.from(json.decode(str).map((x) => StoreModel.fromJson(x)));
 
-String storeModelToJson(List<StoreModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+// String storeModelToJson(List<StoreModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class StoreModel {
     int id;
